@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Main} from "./Components/n1-Main/Main";
+import {Route, Routes} from "react-router-dom";
+import {ErrorPage} from "./Components/n1-Main/Error404Page/ErrorPage";
+import {TestPage} from "./Components/n2-Features/f1-Test/TestPage";
+import {Auth} from "./Components/n2-Features/f2-Auth/Auth";
+import {PATH} from "./Components/n1-Main/Header/Navigators/Navigations";
+import {Profile} from "./Components/n1-Main/Profile/Profile";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export const App = () => {
+    return (
+        <div className='App'>
+            {/*hashrouter  provider*/}
+
+            <Routes>
+                <Route path={'/' || PATH.MAIN} element={<Main/>}/>
+                <Route path={PATH.PROFILE} element={<Profile/>}/>
+                <Route path={PATH.AUTH} element={<Auth/>}/>
+                <Route path={PATH.TEST} element={<TestPage/>}/>
+                <Route path='*' element={<ErrorPage/>}/>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,66 @@
+@keyframes blink {
+    0% {
+        left: -120%;
+    }
+    100% {
+        left: 120%;
+    }
+
+}
+
+.default {
+    background: #70d8f8;
+    outline: none;
+
+}
+
+.red {
+    background: red;
+}
+
+.button {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    position: relative;
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0.6em;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    border-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+
+}
+
+.button:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.btn:hover, .btn:focus {
+    color: #fff;
+    outline: 0;
+}
+
+
+.button:disabled {
+    color: darkgrey;
+    cursor: auto;
+
+}
+
+.button:disabled::after {
+    z-index: -1;
+}
+
+.button:disabled::before {
+    z-index: -1;
+}
